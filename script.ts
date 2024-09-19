@@ -9,6 +9,8 @@ interface Player {
 
 const table = document.getElementById('resuts-table') as HTMLTableElement;
 
+const team: string | null = localStorage.getItem("team");
+
 
 //get data from API
 async function fetchData(Requirements:Player): Promise<(Player[] | null)>{
@@ -33,6 +35,10 @@ async function fetchData(Requirements:Player): Promise<(Player[] | null)>{
 };
 
 async function fillTable(data: Player[]) {
+    table.innerHTML = "";
+
+    createTable();
+    
     data.forEach((player) => {
 
         let row = table.insertRow();
@@ -96,7 +102,6 @@ document.getElementById("search-button")?.addEventListener("click", async () => 
 
 function addPlayer(player: Player):void {
 
-    let team: string | null = localStorage.getItem("team");
     if (team === null) {
 
         let players: Player[] = [];
@@ -111,8 +116,6 @@ function addPlayer(player: Player):void {
 }
 
 // insert exsits playwer in team cards
-
-let team: string | null = localStorage.getItem("team");
 
 
 function insertPlayersInCards():void{

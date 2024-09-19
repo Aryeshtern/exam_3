@@ -37,6 +37,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var _a;
 var _this = this;
 var table = document.getElementById('resuts-table');
+var team = localStorage.getItem("team");
 //get data from API
 function fetchData(Requirements) {
     return __awaiter(this, void 0, void 0, function () {
@@ -75,6 +76,8 @@ function fetchData(Requirements) {
 function fillTable(data) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
+            table.innerHTML = "";
+            createTable();
             data.forEach(function (player) {
                 var row = table.insertRow();
                 row.insertCell(0).textContent = player.playerName || "null";
@@ -151,7 +154,6 @@ function createTable() {
     });
 }); });
 function addPlayer(player) {
-    var team = localStorage.getItem("team");
     if (team === null) {
         var players = [];
         players.push(player);
@@ -165,7 +167,6 @@ function addPlayer(player) {
     insertPlayersInCards();
 }
 // insert exsits playwer in team cards
-var team = localStorage.getItem("team");
 function insertPlayersInCards() {
     if (team) {
         var teamList = JSON.parse(team);
