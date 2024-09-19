@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header id="page-header">NBA FANTASTY 2014-2024</header>
+    <h3>My Fantasty Team</h3>
+    <div id="container">
+        <div class="member-card" id="PG">
+            <h4>Point Guard</h4>
+            <p class="name"></p>
+            <p class="tree-precents"></p>
+            <p class="Two-precents"></p>
+            <p class="points"></p>
+        </div>
+        <div class="member-card" id="SG">
+            <h4>Shooting Guard</h4>
+            <p class="name"></p>
+            <p class="tree-precents"></p>
+            <p class="Two-precents"></p>
+            <p class="points"></p>
+        </div>
+        <div class="member-card" id="SF">
+            <h4>Small Forword</h4>
+            <p class="name"></p>
+            <p class="tree-precents"></p>
+            <p class="Two-precents"></p>
+            <p class="points"></p>
+        </div>
+        <div class="member-card" id="PF">
+            <h4>Power Forword</h4>
+            <p class="name"></p>
+            <p class="tree-precents"></p>
+            <p class="Two-precents"></p>
+            <p class="points"></p>
+        </div>
+        <div class="member-card" id="C">
+            <h4>Center</h4>
+            <p class="name"></p>
+            <p class="tree-precents"></p>
+            <p class="Two-precents"></p>
+            <p class="points"></p>
+        </div>
+    </div>
+    <main >
+        <div class="sreach-form">
+            <div >
+            <select id="player-position">
+                <option value="">Select Position</option>
+                <option value="PG">PG</option>
+                <option value="SG">SG</option>
+                <option value="SF">SF</option>
+                <option value="PF">PF</option>
+                <option value="C">C</option>
+            </select>
+        </div>
+            <div class="input">
+            <output>0</output><input type="range" id="points" value="0" min="0" max="20000" oninput="this.previousSibling.value = this.value"><br>
+            <output>0</output><input type="range" id="three-percent-input" value="0" min="0" max="100" oninput="this.previousSibling.value = this.value"><br>
+            <output>0</output><input type="range" id="two-percent-input" value="0" min="0" max="100" oninput="this.previousSibling.value = this.value"><br>
+            <button id="search-button" type="button">Search Player</button>
+            </div>
+        </div>
+        <table id="resuts-table">
+        </table>
+    </main>
+
+        
+</body>
+</html>
